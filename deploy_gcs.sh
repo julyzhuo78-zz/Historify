@@ -1,4 +1,4 @@
 # bin/bash
 
-gcloud app deply
+gcloud app deploy
 gcloud app browse
