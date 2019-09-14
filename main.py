@@ -12,6 +12,25 @@ notes = {
     2: 'paint the door',
 }
 
+data = {
+    0: {'name': 'Ada Lovelace', 'dob': 'December 10, 1815',
+        'previous_observations': [{'date': 'September 14, 2019', 
+                                   'observation': 'healthy'}, 
+                                   {'date': 'September 13, 2019',
+                                   'observation': 'flu'}],
+        'current_observation': ''},
+    1: {'name': 'Grace Hopper', 'dob': 'December 9, 1906',
+        'previous_observations': [{'date': 'September 12, 2019',
+                                    'observation': 'healthy'},
+                                    {'date': 'September 11, 2019',
+                                    'observation': 'healthy'}],
+        'current_observation': ''},
+    2: {'name': 'Katherine Johnson', 'dob': 'August 26, 1918',
+        'previous_observations': [{'date': 'September 10, 2019',
+                                    'observation': 'cold'}],
+        'current_observation': ''}
+}
+
 def note_repr(key):
     return {
         'url': request.host_url.rstrip('/') + url_for('notes_detail', key=key),
@@ -19,19 +38,33 @@ def note_repr(key):
     }
 
 
+def data_repr(key):
+    return {
+        'url': request.host_url.rstrip('/') + url_for('notes_detail', key=key),
+        'data': data[key]
+    }
+
+
 @app.route("/", methods=['GET', 'POST'])
-def notes_list():
+def data_list():
     """
     List or create notes.
     """
     if request.method == 'POST':
-        note = str(request.data.get('text', ''))
-        idx = max(notes.keys()) + 1
-        notes[idx] = summarize(note)
-        return note_repr(idx), status.HTTP_201_CREATED
+        # name = str(request.data.get('name', ''))
+        # raw_text = str(request.data.get('text', ''))
+
+        # idx = max(data.keys()) + 1
+        # data[idx] = {}
+
+        # note = str(request.data.get('text', ''))
+        # idx = max(notes.keys()) + 1
+        # notes[idx] = summarize(note)
+        # return data_repr(idx), status.HTTP_201_CREATED
+        return status.HTTP_204_NO_CONTENT
 
     # request.method == 'GET'
-    return [note_repr(idx) for idx in sorted(notes.keys())]
+    return [data_repr(i) for i in sorted(data.keys())]
 
 
 @app.route("/<int:key>/", methods=['GET', 'PUT', 'DELETE'])
