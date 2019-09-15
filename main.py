@@ -1,10 +1,11 @@
+from flask import Flask
 from flask import request, url_for, redirect
-from flask_api import FlaskAPI, status, exceptions
+# from flask_api import FlaskAPI, status, exceptions
 # import flask_login
 
 from gensim.summarization.summarizer import summarize
 
-app = FlaskAPI(__name__)
+app = Flask(__name__)
 app.secret_key = 'super secret string'
 
 
@@ -152,7 +153,7 @@ def data_list():
 
     # print('here')
     # request.method == 'GET'
-    return [data_repr(i) for i in sorted(data.keys())]
+    return str([data_repr(i) for i in sorted(data.keys())])
 
 
 @app.route("/<int:key>/", methods=['GET', 'PUT', 'DELETE'])
