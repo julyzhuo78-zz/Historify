@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<style>
+  body {background-color:#C4EEFE;}
+  table tbody { height:400px; width: 950px; overflow-y:scroll; display:block; }
+  h1   {color: blue; text-align: center; font-size: 50pt; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+  h1   {padding-left: 7.5cm;}
+  h2   {font-size: 28pt; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding-left: 6.2cm;}
+  p    {color: black; font-size: 14pt; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding-left: 6.2cm;}
+  
+  table{
+        border-collapse:collapse;
+        border-radius: 5px;
+        text-align: center;
+        margin: 0 auto;
+        border-top:1px solid black;
+        border-bottom:1px solid black;
+        border-right:1px solid black;
+        border-left:1px solid black;
+  }
+  th{
+        font-family:segoe ui;
+        font-size:18pt;
+        border-bottom:1px solid black;
+        border-right: 1px solid black;
+        color:black;
+        font:bold;
+        padding:1px 1px 0;
+        height: 30pt;
+        background-color: lightgrey;
+  }
+  td{
+        font-family:segoe ui;
+        color:black;
+        font-size:18pt;
+        text-align: left;
+        border-bottom:1px solid black;
+        border-right: 1px solid black;
+        color:black;
+        padding:3px 3px;
+        height: 35pt;
+        
+  }
+  tr {
+        background-color:white;
+        height: 35pt;
+
+  }
+.var {
+  color: goldenrod;
+}
+
+.typewriter {
+  font-family: Courier, monospace;
+	display: inline-block;
+}
+
+.typewriter-text {
+    display: inline-block;
+  	overflow: hidden;
+  	letter-spacing: 2px;
+ 	  animation: typing 3s steps(30, end), blink .75s step-end infinite;
+    white-space: nowrap;
+    font-size: 35px;
+    font-weight: 700;
+    border-right: 4px solid orange;
+    box-sizing: content-box;;
+    text-align: center;
+}
+
+@keyframes typing {
+    from { 
+        width: 0% 
+    }
+    to { 
+        width: 100% 
+    }
+}
+
+@keyframes blink {
+    from, to { 
+        border-color: transparent 
+    }
+    50% { 
+        border-color: orange; 
+    }
+}
+
+</style>
+    <center><img src="/static/image.jpg" alt="Clinic Image">
+    </center>
+  </head>
+
+  <body>
+  <div class="typewriter">
+    <div class="typewriter-text">
+      <h1 style="color: black;">Hey, how's your day?</h1>
+    </div>
+</div>
+<h2 style="color: sienna;">Profile</h2>
+<table>
+  <tbody>
+  <tr>
+    <th colspan="2">History of Presenting Illness</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>{{dict.ptName}}</strong></strong> presents with <strong>{{dict.quality}}</strong>, <strong>{{dict.severity}}/10</strong> <strong>{{dict.chiefComplaint}}</strong> that started <strong>{{dict.onset}}</strong> ago. It radiates to <strong>{{dict.radiate}}</strong> and typically presents with <strong>{{dict.assoc}}</strong>, <strong>{{dict.aggrov}}</strong> makes it worse while <strong>{{dict.allev}}</strong> makes it better. </td>
+     <td></td>
+  </tr>
+  <tr>
+    <th>Past Medical History</th>
+    <th>Past Social History</th>
+  </tr>
+  <tr>
+    <td>Surgeries: {{dict.surgeries}}</td>
+    <td>Significant others: {{dict.significant}}</td>
+  </tr>
+  <tr>
+    <td>Allergies: {{dict.allergies}}</td>
+    <td>Occupation: {{dict.occupation}}</td>
+  </tr>
+  <tr>
+    <td>Illnesses: {{dict.illness}}</td>
+    <td>Children: {{dict.underling}}</td>
+  </tr>
+  <tr>
+    <td>Hospitalizations: {{dict.hospital}}</td>
+    <td>Living Situation: {{dict.livingSit}}</td>
+  </tr>
+  <tr>
+    <td>Medications: {{dict.medication}}</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>FHx: {{dict.momfhx}}</td>
+    <td></td>
+  </tr>
+  <tr>
+    <th colspan="2">Habits</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>Smokes: {{dict.smoke}}</td>
+    <td>Sleep: {{dict.sleep}}</td>
+  </tr>
+  <tr>
+    <td>Alcohol: {{dict.alcohol}}</td>
+    <td>Exercise: {{dict.exercise}}</td>
+  </tr>
+  <tr>
+    <td>Drugs: {{dict.drug}}</td>
+    <td>Diet: {{dict.diet}}</td>
+  </tr>
+  <tr>
+    <th colspan="2">Other Symptoms:</th>
+    <th></th>
+  </tr>
+  <tr>
+    <th colspan="2">Specific to Chief Complaint:</th>
+    <th></th>
+  </tr>
+  ​
+  ​
+  ​
+  </tbody>
+  </table>
+
+  <p><button onclick="myFunction()", style="padding: 15px; text-align: center;">Show Prehistory Summary</button></p>
+  <p id = "summarize"> </p>
+  <script>
+  function myFunction() {
+     document.getElementById("summarize").innerHTML = "Summary generated."
+  }
+  </script>
+  <h2>How to reach us</h2>
+  <p><img style="float: left;" src="/static/email.jpg" alt="email:" width="45" /> general_doctor@clinic.com</p>
+  <p><img style="float: left;" src="/static/phone.png" alt="phone:" width="45" /> 519-828-6678</p>
+  <div style="float: right; padding-right: 20pt;">
+  <p><img src="/static/Logo.png" alt="logo:" width="200" style="align-self: flex-end;"/></p>
+  </div>
+
+   </body>
+  </html>
