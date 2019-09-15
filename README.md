@@ -1,5 +1,5 @@
 # Historify - Hack the North 2019 Finalist 
-![alt text](https://raw.githubusercontent.com/julyzhuo78/HTN2019/july2/static/Logo.png)
+![alt text](https://raw.githubusercontent.com/julyzhuo78/Historify/july2/static/Logo.png)
 
 ## Inspiration
 When people visit the doctors office today, they rarely have more than 10 minutes to explain their problems and potential concerns they may have. Even worse, studies show that the average time you have before a doctor will interrupt you is 11 seconds!!! How much can you possibly explain in 11 seconds? Maybe one symptom you're having, but good luck trying to fit in your concern that your close friend recently had similar symptoms that escalated and resulted in an amputated arm. Or that you lost your job last month, don't have valid health insurance and can't afford even the cheapest medications. Or that, despite the best treatment plan being a combination of medications and minor surgery, this is against your culture that prioritizes spiritual and natural therapies.
