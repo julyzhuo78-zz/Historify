@@ -14,7 +14,7 @@ data = {
         'onset': 'onset',
         'quality': 'quality',
         'radiate': 'radiate',
-        'severity': 'severity',
+        'severity': '',
         'dejavu': 'dejavu',
         'assoc': 'assoc',
         'aggrov': 'aggrov',

@@ -95,7 +95,7 @@
   <body>
   <div class="typewriter">
     <div class="typewriter-text">
-      <h1 style="color: black;">How's your day, <span style="color: green;">Judy? </span></h1>
+      <h1 style="color: black;">Hey, how's your day?</h1>
     </div>
 </div>
 <h2 style="color: sienna;">Profile</h2>
@@ -106,7 +106,7 @@
     <th></th>
   </tr>
   <tr>
-    <td colspan="2"><strong>{{dict.ptName}}</strong></strong>presents with <strong>{{dict.quality}}</strong>, <strong>{{dict.severity}}</strong> <strong>{{dict.chiefComplaint}}</strong> that started <strong>{{dict.onset}}</strong> ago. It radiates to <strong>{{dict.radiate}}</strong> and typically presents with <strong>{{dict.assoc}}</strong>, <strong>{{dict.aggrov}}</strong> makes it worse while <strong>{{dict.allev}}</strong> makes it better. </td>
+    <td colspan="2"><strong>{{dict.ptName}}</strong></strong> presents with <strong>{{dict.quality}}</strong>, <strong>{{dict.severity}}/10</strong> <strong>{{dict.chiefComplaint}}</strong> that started <strong>{{dict.onset}}</strong> ago. It radiates to <strong>{{dict.radiate}}</strong> and typically presents with <strong>{{dict.assoc}}</strong>, <strong>{{dict.aggrov}}</strong> makes it worse while <strong>{{dict.allev}}</strong> makes it better. </td>
      <td></td>
   </tr>
   <tr>
@@ -166,16 +166,20 @@
   ​
   </tbody>
   </table>
-  <p>To show the prehistory summary </p>
-  <button onclick=“displayResult()“>Summarize</button>
-  <button style="padding: 5x 10px;"></button>
-  <p id = “summarize”> </p>
+
+  <p><button onclick="myFunction()", style="padding: 15px; text-align: center;">Show Prehistory Summary</button></p>
+  <p id = "summarize"> </p>
   <script>
-  function displayResult() {
-      document.getElementById(“summarize”).innerHTML = "Everything seems nice so far.";
+  function myFunction() {
+     document.getElementById("summarize").innerHTML = "Summary generated."
   }
   </script>
-  <h2 style=“color: #2e6c80;“>Prehistory Summary</h2>
-  <h2 style=“color: #2e6c80;“>How to reach us</h2>
+  <h2>How to reach us</h2>
+  <p><img style="float: left;" src="/static/email.jpg" alt="email:" width="45" /> general_doctor@clinic.com</p>
+  <p><img style="float: left;" src="/static/phone.png" alt="phone:" width="45" /> 519-828-6678</p>
+  <div style="float: right; padding-right: 20pt;">
+  <p><img src="/static/Logo.png" alt="logo:" width="200" style="align-self: flex-end;"/></p>
+  </div>
+
    </body>
   </html>
